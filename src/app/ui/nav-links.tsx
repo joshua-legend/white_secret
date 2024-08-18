@@ -11,6 +11,8 @@ import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/mater
 import Divider from '@mui/material/Divider';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Icon from './joshua/atom/Icon';
+import Label from './joshua/atom/Label';
 
 const menuItems = [
   {
@@ -98,14 +100,8 @@ export default function NavLinks() {
                     color: pathname === link.href ? '#1dc4e9' : '#9FB3D0',
                   }}
                 >
-                  <ListItemIcon>
-                    <LinkIcon
-                      sx={{
-                        color: pathname === link.href ? '#1dc4e9' : '#9FB3D0',
-                      }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText primary={link.name} />
+                  <Icon icon={<LinkIcon />} active={pathname === link.href} />
+                  <Label text={link.name} color={pathname === link.href ? 'link' : 'drawer'} />
                 </ListItemButton>
               </Link>
             );
