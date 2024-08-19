@@ -3,9 +3,9 @@ import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Image from 'next/image';
-// import NavLinks from './nav-links';
+import NavLinks from './nav-links';
 import Link from 'next/link';
-import NavLinks from './joshua/organism/NavLinks';
+// import NavLinks from './joshua/organism/NavLinks';
 
 const drawerWidth = 240;
 

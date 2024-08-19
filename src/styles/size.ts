@@ -19,4 +19,8 @@ export const sizes = {
     large: '6px',
     xlarge: '8px',
   },
+  gap: {
+    small: '2px',
+    medium: '4px',
+  },
 };

@@ -98,8 +98,14 @@ export default function NavLinks() {
                     color: pathname === link.href ? '#1dc4e9' : '#9FB3D0',
                   }}
                 >
-                  {/* <Icon icon={<LinkIcon />} active={pathname === link.href} />
-                  <Label text={link.name} color={pathname === link.href ? 'link' : 'drawer'} /> */}
+                  <ListItemIcon>
+                    <LinkIcon
+                      sx={{
+                        color: pathname === link.href ? '#1dc4e9' : '#9FB3D0',
+                      }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary={link.name} />
                 </ListItemButton>
               </Link>
             );

@@ -11,6 +11,7 @@ import Divider from '@mui/material/Divider';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import LinkButton, { LinkButtonProps } from '../molecules/LinkButton';
+import IconicTitle, { IconicTitleProps } from '../molecules/IconicTitle';
 
 const menuItems = [
   {
@@ -71,10 +72,24 @@ const menuItems = [
   },
 ];
 
-const dummyItems: LinkButtonProps[] = [
-  { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
-  { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
-  { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
+type NavLinksProps = {
+  iconicTitleProps: IconicTitleProps;
+  linkButtonsProps: LinkButtonProps;
+};
+
+const dummyItems: NavLinksProps[] = [
+  {
+    iconicTitleProps: { Icon: FormatListBulletedIcon, titleProps: { title: '큰 제목' } },
+    linkButtonsProps: { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
+  },
+  {
+    iconicTitleProps: { Icon: FormatListBulletedIcon, titleProps: { title: '큰 제목' } },
+    linkButtonsProps: { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
+  },
+  {
+    iconicTitleProps: { Icon: FormatListBulletedIcon, titleProps: { title: '큰 제목' } },
+    linkButtonsProps: { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
+  },
 ];
 
 const NavLinks = () => {
@@ -82,7 +97,10 @@ const NavLinks = () => {
   return (
     <>
       {dummyItems.map((v) => (
-        <LinkButton {...v} />
+        <div>
+          <IconicTitle {...v.iconicTitleProps} />
+          <LinkButton {...v.linkButtonsProps} />
+        </div>
       ))}
     </>
   );
