@@ -4,13 +4,7 @@ import React from 'react';
 import { MultiPurposeButton } from './ui/(Bteam)atomize/button/MultiPurposeButton';
 import { MultiPurposeInput } from './ui/(Bteam)atomize/input/MultiPurposeInput';
 import DropDownBar from './ui/(Bteam)atom/dropdown/DropDownBar';
-import {
-  AllowanceRates,
-  CleaningItem,
-  Documents,
-  PaymentMethods,
-  WeekDays,
-} from './ui/(Bteam)atom/dropdown/DropDownList';
+import { AllowanceRates, CleaningItem, Documents, PaymentMethods, WeekDays } from './ui/(Bteam)atom/dropdown/DropDownList';
 
 export default function Home() {
   return (
@@ -27,17 +21,11 @@ export default function Home() {
           <MultiPurposeButton RegisterFn={() => console.log('Register!')} text="등록" />
         </div>
         <div className="flex flex-row w-full h-fit">
-          <MultiPurposeButton
-            ExRegisterFn={() => console.log('Cancle Extra Register!')}
-            text="등록중지"
-          />
+          <MultiPurposeButton ExRegisterFn={() => console.log('Cancle Extra Register!')} text="등록중지" />
           <MultiPurposeButton ExRegisterFn={() => console.log('Extra Register!')} text="추가등록" />
         </div>
         <div className="flex flex-row w-full h-fit">
-          <MultiPurposeButton
-            salaryCheckFn={() => console.log('Check Salary!')}
-            text="급여사항 확인"
-          />
+          <MultiPurposeButton salaryCheckFn={() => console.log('Check Salary!')} text="급여사항 확인" />
         </div>
       </div>
       <div>

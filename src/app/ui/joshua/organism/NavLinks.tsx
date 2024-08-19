@@ -1,5 +1,4 @@
 'use client';
-
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PeopleIcon from '@mui/icons-material/People';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
@@ -11,6 +10,7 @@ import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/mater
 import Divider from '@mui/material/Divider';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import LinkButton, { LinkButtonProps } from '../molecules/LinkButton';
 
 const menuItems = [
   {
@@ -71,42 +71,20 @@ const menuItems = [
   },
 ];
 
-export default function NavLinks() {
-  const pathname = usePathname();
+const dummyItems: LinkButtonProps[] = [
+  { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
+  { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
+  { href: '/engineer/e_list', iconprops: { icon: <FormatListBulletedIcon />, color: '#1dc4e9' }, labelprops: { color: '#1dc4e9', fontSize: 'small', text: '엄준식' } },
+];
 
+const NavLinks = () => {
+  const pathname = usePathname();
   return (
     <>
-      {menuItems.map((menuItem) => (
-        <div key={menuItem.title}>
-          <ListItem
-            sx={{
-              color: '#E8E3D2',
-              fontSize: '12px',
-              gap: '10px',
-            }}
-          >
-            <menuItem.icon />
-            {menuItem.title}
-          </ListItem>
-          {menuItem.links.map((link) => {
-            const LinkIcon = link.icon;
-            return (
-              <Link key={link.name} href={link.href} passHref style={{ textDecoration: 'none' }}>
-                <ListItemButton
-                  sx={{
-                    ':hover': { color: '#1dc4e9' },
-                    color: pathname === link.href ? '#1dc4e9' : '#9FB3D0',
-                  }}
-                >
-                  {/* <Icon icon={<LinkIcon />} active={pathname === link.href} />
-                  <Label text={link.name} color={pathname === link.href ? 'link' : 'drawer'} /> */}
-                </ListItemButton>
-              </Link>
-            );
-          })}
-          <Divider />
-        </div>
+      {dummyItems.map((v) => (
+        <LinkButton {...v} />
       ))}
     </>
   );
-}
+};
+export default NavLinks;

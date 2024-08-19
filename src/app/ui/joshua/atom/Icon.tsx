@@ -1,22 +1,15 @@
 import { colors } from '@/styles/colors';
+import { TextColorValue } from '@/util/colorUtils';
 import { ListItemIcon } from '@mui/material';
 import { ReactElement } from 'react';
 
 export type IconProps = {
   icon: ReactElement;
-  active?: boolean;
+  color?: TextColorValue;
 };
 
-const Icon = ({ icon, active = false }: IconProps) => {
-  return (
-    <ListItemIcon
-      sx={{
-        color: active ? colors.text.link : colors.text.drawer,
-      }}
-    >
-      {icon}
-    </ListItemIcon>
-  );
+const Icon = ({ icon, color }: IconProps) => {
+  return <ListItemIcon sx={{ color }}>{icon}</ListItemIcon>;
 };
 
 export default Icon;

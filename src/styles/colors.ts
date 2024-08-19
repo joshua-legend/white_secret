@@ -13,6 +13,10 @@ export const colors = {
     secondary: '#E8E3D2', // 보조 텍스트 색상
     drawer: '#9FB3D0', // 드로어 텍스트 색상
     link: '#1dc4e9', // 링크 텍스트 색상 (기본 및 호버)
+    active: '#1dc4e9',
+    inActive: '#9FB3D0',
+    current: '#1dc4e9',
+    notCurrent: '#9FB3D0',
     hover: '#1dc4e9', // 링크 호버 시 텍스트 색상
   },
 
@@ -31,4 +35,4 @@ export const colors = {
     default: '#9FB3D0', // 기본 아이콘 색상
     active: '#1dc4e9', // 활성화된 아이콘 색상
   },
-};
+} as const;
