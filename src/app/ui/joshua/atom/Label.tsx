@@ -1,20 +1,21 @@
 import { colors } from '@/styles/colors';
-import { sizes } from '@/styles/size';
-import { TextColorValue } from '@/util/colorUtils';
-import { ListItemText, TypographyProps } from '@mui/material';
+import { sizes } from '@/styles/sizes';
+import { TextColorKey } from '@/util/colorUtils';
+import { FontSizeKey } from '@/util/sizeUtils';
+import { ListItemText } from '@mui/material';
 
 export type LabelProps = {
   text?: string;
-  fontSize?: keyof typeof sizes.fontSize;
-  color?: TextColorValue;
+  fontSize?: FontSizeKey;
+  color?: TextColorKey;
 };
 
-const Label = ({ text = 'Default Label', color, fontSize = 'medium' }: LabelProps) => {
+const Label = ({ text = 'Default Label', color = 'primary', fontSize = 'medium' }: LabelProps) => {
   return (
     <ListItemText
+      sx={{ ':hover': { color: colors.text.current }, fontSize: sizes.fontSize[fontSize], color: colors.text[color] }}
       primary={text}
       primaryTypographyProps={{
-        style: { fontSize: sizes.fontSize[fontSize], color },
         component: 'span',
       }}
     />

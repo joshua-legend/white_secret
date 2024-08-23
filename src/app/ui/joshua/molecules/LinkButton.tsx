@@ -1,6 +1,6 @@
 'use client';
 import Icon, { IconProps } from '../atom/Icon';
-import { ListItemButton } from '@mui/material';
+import { ListItemButton, ListItemText } from '@mui/material';
 import Link from 'next/link';
 import Label, { LabelProps } from '../atom/Label';
 import { colors } from '@/styles/colors';
@@ -15,17 +15,19 @@ export type LinkButtonProps = {
 
 const LinkButton = ({ href, iconprops, labelprops }: LinkButtonProps) => {
   const currentState = stateMapper.currentState(isCurrentRoute(href));
-  const color = determineCurruentColor(currentState);
   return (
     <Link href={href} passHref style={{ textDecoration: 'none' }}>
       <ListItemButton
         sx={{
-          ':hover': { ...colors.text },
-          color,
+          ':hover': { color: colors.text.current },
+          padding: '0px',
+          color: currentState,
+          display: 'flex',
+          gap: '10px',
         }}
       >
-        <Icon {...iconprops} color={color} />
-        <Label {...labelprops} color={color} />
+        <Icon {...iconprops} color={currentState} />
+        <Label {...labelprops} color={currentState} />
       </ListItemButton>
     </Link>
   );

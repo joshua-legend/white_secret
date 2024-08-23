@@ -3,11 +3,11 @@ import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Image from 'next/image';
-import NavLinks from './nav-links';
 import Link from 'next/link';
-// import NavLinks from './joshua/organism/NavLinks';
+import NavLinks from './nav-links';
+import NavLinks1 from './joshua/organism/NavLinks';
 
-const drawerWidth = 240;
+const drawerWidth = 600;
 
 export default function SideNav() {
   return (
@@ -32,9 +32,14 @@ export default function SideNav() {
           <Image src={'/logo.png'} width={200} height={40} alt="LOGO"></Image>
         </Link>
       </Toolbar>
-      <List>
-        <NavLinks />
-      </List>
+      <div style={{ display: 'flex' }}>
+        <List>
+          <NavLinks />
+        </List>
+        <List>
+          <NavLinks1 />
+        </List>
+      </div>
     </Drawer>
   );
 }

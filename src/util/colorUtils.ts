@@ -18,5 +18,5 @@ const colorStrategies = {
   notCurrent: colors.text.notCurrent,
 };
 
-export const determineActiveColor = (state: 'active' | 'inactive'): TextColorValue => colorStrategies[state];
-export const determineCurruentColor = (state: 'current' | 'notCurrent'): TextColorValue => colorStrategies[state];
+export const determineActiveColor = (state: 'active' | 'inactive') => colorStrategies[state];
+export const determineCurruentColor = (state: 'current' | 'notCurrent') => colorStrategies[state];
